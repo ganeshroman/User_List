@@ -8,7 +8,7 @@
 
 
 
-### Technology
+### Technology Used
 - Kotlin
 - MVVM
 - Data Binding
