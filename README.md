@@ -37,11 +37,14 @@
 
 #### Screenshots
 
-![First](https://github.com/ganeshroman/User_List/blob/6fc1f11e89713147eec613d967bd5bf35490fa8d/Screenshot_20230628_150547.png)
 
-![Filter](https://github.com/ganeshroman/User_List/blob/6fc1f11e89713147eec613d967bd5bf35490fa8d/Screenshot_20230628_150630.png)
+<img src="https://github.com/ganeshroman/User_List/blob/6fc1f11e89713147eec613d967bd5bf35490fa8d/Screenshot_20230628_150547.png" width="500" height="900">
 
-![Details](https://github.com/ganeshroman/User_List/blob/6fc1f11e89713147eec613d967bd5bf35490fa8d/Screenshot_20230628_150707.png)
+<img src="https://github.com/ganeshroman/User_List/blob/6fc1f11e89713147eec613d967bd5bf35490fa8d/Screenshot_20230628_150630.png" width="500" height="900">
+
+<img src="https://github.com/ganeshroman/User_List/blob/6fc1f11e89713147eec613d967bd5bf35490fa8d/Screenshot_20230628_150707.png" width="500" height="900">
+
+
 
 
 
