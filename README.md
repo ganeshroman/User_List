@@ -23,6 +23,8 @@
 - RecyclerView
 - Card View
 - Live Data
+- Constraint Layout
+- TextInputField
 
 ### Backend Details
 
