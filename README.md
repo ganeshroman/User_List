@@ -6,6 +6,16 @@
 - **Created Date:** 28 June 2023
 - **Last modified:** 28 June 2023 
 
+## Feature
+- Retrieve and display a list of items from a RESTful API (https://gorest.co.in/public/v2/users).
+
+- Implement a search functionality to filter the items based on a specific criterion (e.g., gender, status, name).
+
+- Show detailed information about each item when selected from the list.
+
+- Apply appropriate design principles and make the application visually appealing.
+
+
 
 
 ### Technology Used
