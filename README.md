@@ -22,6 +22,7 @@
 - Dialog Fragment
 - RecyclerView
 - Card View
+- Live Data
 
 ### Backend Details
 
@@ -39,6 +40,42 @@
         "gender": "female",
         "status": "active"
     }
+
+```
+
+```
+data class User (
+    val id:Long,
+    val name:String,
+    val email:String,
+    val gender:String,
+    val status:String
+)
+```
+
+- **Library Imports**
+  
+```
+    def lifecycle_version = "2.2.0"
+    def kotlin_version = '1.3.72'
+    def retrofit_version = "2.9.0"
+    def logging_version = "4.3.1"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // - - ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // - - LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // cardview
+    implementation 'com.google.android.material:material:1.2.1'
+
+    // - - Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$logging_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_version"
 
 ```
 
