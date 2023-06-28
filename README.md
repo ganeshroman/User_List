@@ -11,6 +11,7 @@
 ### Technology Used
 - Kotlin
 - MVVM
+- Retrofit
 - Data Binding
 - Dialog Fragment
 - RecyclerView
