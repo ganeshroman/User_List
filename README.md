@@ -22,6 +22,7 @@
 - Dialog Fragment
 - RecyclerView
 - Card View
+- Live Data
 
 ### Backend Details
 
