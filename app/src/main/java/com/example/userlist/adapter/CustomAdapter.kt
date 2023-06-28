@@ -3,13 +3,12 @@ package com.example.userlist.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.userlist.R
 import com.example.userlist.model.User
 
-class CustomAdapter(private val mList: List<User>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val mList: List<User>?) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,19 +21,19 @@ class CustomAdapter(private val mList: List<User>) : RecyclerView.Adapter<Custom
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val itemsViewModel = mList[position]
+        val itemsViewModel =mList?.get(position)// mList[position]
 
 
-        holder.textName.text = itemsViewModel.name
-        holder.textEmail.text = itemsViewModel.email
-        holder.textGender.text = itemsViewModel.gender
+        holder.textName.text = itemsViewModel?.name
+        holder.textEmail.text = itemsViewModel?.email
+        holder.textGender.text = itemsViewModel?.gender
 
 
     }
 
     // return the number of the items in the list
     override fun getItemCount(): Int {
-        return mList.size
+        return mList!!.size
     }
 
     // Holds the views for adding it to image and text

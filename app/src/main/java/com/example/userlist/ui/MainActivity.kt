@@ -3,19 +3,12 @@ package com.example.userlist.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.userlist.R
 import com.example.userlist.adapter.CustomAdapter
 import com.example.userlist.databinding.ActivityMainBinding
 import com.example.userlist.model.User
@@ -26,13 +19,15 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var context: Context
+    lateinit var adapter:CustomAdapter
+    lateinit var mainActivityViewModel: MainViewModel
 
 
     companion object {
         val requestcode:Int=1234
     }
 
-    lateinit var mainActivityViewModel: MainViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,12 +40,32 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.btnClick.setOnClickListener {
-            getUpdateUser()
+
+            var strFilter:String=binding.edtName.text.toString();
+            var strFilterMale:String=binding.edtGender.text.toString();
+
+            var filteredList:List<User>? = mainActivityViewModel.servicesLiveData?.value?.filter { it.name.contains(""+strFilter) }
+
+
+
+            getUpdateOnList(filteredList);
+            adapter.notifyDataSetChanged()
+
         }
 
+
+        binding.btnClear.setOnClickListener{
+
+            getUpdateOnList(mainActivityViewModel.servicesLiveData?.value);
+            adapter.notifyDataSetChanged()
+        }
+
+
+        getUpdateUser()
     }
 
 
+    @SuppressLint("SuspiciousIndentation")
     fun getUpdateUser(){
         binding.wp7progressBar.visibility = View.VISIBLE
 
@@ -72,7 +87,6 @@ class MainActivity : AppCompatActivity() {
             .observe(this, Observer { serviceSetterGetter ->
 
                 binding.wp7progressBar.visibility = View.GONE
-
                 getUpdateOnList(serviceSetterGetter)
 
             })
@@ -80,10 +94,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun getUpdateOnList( listElements: List<User> ){
+    fun getUpdateOnList( listElements: List<User>? ){
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
-        val adapter = CustomAdapter(listElements)
+        adapter = CustomAdapter(listElements)
         binding.recyclerview.adapter = adapter
     }
 

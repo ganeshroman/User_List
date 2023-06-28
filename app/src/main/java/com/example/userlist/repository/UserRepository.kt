@@ -10,16 +10,13 @@ import retrofit2.Response
 
 
 object UserRepository {
-
     val userSetterGetter = MutableLiveData<List<User>>()
 
     fun getUserApiCall(): MutableLiveData<List<User>> {
 
         val call = RetrofitClient.apiInterface.getUser()
-
         call.enqueue(object: Callback<List<User>> {
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
-
                 Log.v("DEBUG : ", t.message.toString())
             }
 
@@ -27,8 +24,9 @@ object UserRepository {
                 call: Call<List<User>>,
                 response: Response<List<User>>
             ) {
+
                 Log.v("DEBUG : ", response.body().toString())
-                val data = response.body()
+                // val data = response.body()
 
                 userSetterGetter.value=response.body()
 
@@ -38,6 +36,8 @@ object UserRepository {
 
         return userSetterGetter
     }
+
+
 
 
 
