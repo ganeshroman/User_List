@@ -25,8 +25,9 @@ class CustomAdapter(private val mList: List<User>?) : RecyclerView.Adapter<Custo
 
 
         holder.textName.text = itemsViewModel?.name
-        holder.textEmail.text = itemsViewModel?.email
-        holder.textGender.text = itemsViewModel?.gender
+        holder.textEmail.text = "Email : "+itemsViewModel?.email
+        holder.textGender.text = "Gender : "+itemsViewModel?.gender
+        holder.textStatus.text = "Status : "+itemsViewModel?.status
 
 
     }
@@ -41,5 +42,6 @@ class CustomAdapter(private val mList: List<User>?) : RecyclerView.Adapter<Custo
         val textName: TextView = itemView.findViewById(R.id.textViewName)
         val textEmail: TextView = itemView.findViewById(R.id.textViewEmail)
         val textGender: TextView = itemView.findViewById(R.id.textViewGender)
+        val textStatus: TextView = itemView.findViewById(R.id.textViewStatus)
     }
 }
