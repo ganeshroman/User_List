@@ -6,9 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.userlist.R
+import com.example.userlist.interfaces.ItemClickListener
 import com.example.userlist.model.User
 
 class CustomAdapter(private val mList: List<User>?) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+
+
+    var itemClick:ItemClickListener?=null
+
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,13 +26,17 @@ class CustomAdapter(private val mList: List<User>?) : RecyclerView.Adapter<Custo
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val itemsViewModel =mList?.get(position)// mList[position]
-
+        val itemsViewModel =mList!!.get(position)// mList[position]
 
         holder.textName.text = itemsViewModel?.name
         holder.textEmail.text = "Email : "+itemsViewModel?.email
-        holder.textGender.text = "Gender : "+itemsViewModel?.gender
-        holder.textStatus.text = "Status : "+itemsViewModel?.status
+        holder.textGender.text = "Gender : "+itemsViewModel?.gender?.capitalize()
+        holder.textStatus.text = "Status : "+itemsViewModel?.status?.capitalize()
+
+        holder.itemView.setOnClickListener {
+            itemClick?.onItemClickListener(itemsViewModel)
+            //onItemClick?.invoke(photosListFiltered[adapterPosition])
+        }
 
 
     }
