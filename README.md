@@ -81,6 +81,14 @@ data class User (
 
 ```
 
+
+#### Project Structure
+
+
+
+<img src="https://github.com/ganeshroman/User_List/blob/c0c8f88fa66d3e0b603f12a5c8577414ba55d06d/Screenshot%202023-06-28%20at%204.18.52%20PM.png" width="250" height="450">
+
+
 #### Screenshots
 
 
