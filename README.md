@@ -12,8 +12,6 @@
 - Show detailed information about each item when selected from the list.
 
 
-
-
 ### Technology Used
 - Kotlin
 - MVVM
