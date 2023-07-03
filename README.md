@@ -9,7 +9,7 @@
 ## Feature
 - Retrieve and display a list of items from a RESTful API (https://gorest.co.in/public/v2/users).
 - Implement a search functionality to filter the items based on a specific criterion (e.g., gender, status, name).
-- Show detailed information about each item when selected from the list..
+- Show detailed information about each item when selected from the list.
 
 
 ### Technology Used
