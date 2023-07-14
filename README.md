@@ -22,7 +22,7 @@
 - Card View
 - Live Data
 - Constraint Layout
-- TextInputField
+- TextInputLayout
 
 ### Backend Details
 
