@@ -16,7 +16,7 @@
 - Kotlin
 - MVVM
 - Retrofit
-- Data Binding
+- View Binding
 - Dialog Fragment
 - RecyclerView
 - Card View
